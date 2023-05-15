@@ -15,10 +15,6 @@ public class Player {
         this.position = (int)(Math.random()*3);
     }
 
-    public void Show(){
-        System.out.println(name+"\t"+health+"\t"+position);
-    }
-
     public boolean isFighting(Player enemy){
         return this.position == enemy.position;
     }

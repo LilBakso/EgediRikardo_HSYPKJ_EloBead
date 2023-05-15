@@ -23,7 +23,7 @@ public class Player {
         return this.position == enemy.position;
     }
 
-    public void Fight(Player enemy) {
+    public void Damage(Player enemy) {
         int damage = (int)(Math.random()*7);
         this.health -= damage;
     }

@@ -10,4 +10,18 @@ public class Battlefield {
         player2 = new Player("Varazslo");
         fieldsize = 3;
     }
+
+    public void Move(){
+        player1.Move();
+        player2.Move();
+    }
+
+    public void Fight(){
+        if (player1.isFighting(player2)){
+            player1.Damage(player2);
+            player2.Damage(player1);
+        }
+    }
+
+
 }

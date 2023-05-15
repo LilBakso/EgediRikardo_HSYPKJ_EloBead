@@ -27,5 +27,9 @@ public class Player {
         int damage = (int)(Math.random()*7);
         this.health -= damage;
     }
+
+    public int getPosition(){
+        return position;
+    }
 }
 

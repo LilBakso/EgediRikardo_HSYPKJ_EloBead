@@ -22,6 +22,28 @@ public class Battlefield {
             player2.Damage(player1);
         }
     }
+    public int getSize(){
+        return fieldsize;
+    }
+
+    public void Build(Battlefield battlefield){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < battlefield.fieldsize; i++){
+            if (i == player1.getPosition() && i == player2.getPosition()){
+                stringBuilder.append("X");
+            }
+            else if (i == player1.getPosition()){
+                stringBuilder.append("H");
+            }
+            else if (i == player2.getPosition()){
+                stringBuilder.append("V");
+            }
+            else{
+                stringBuilder.append("_");
+            }
+        }
+
+    }
 
 
 }

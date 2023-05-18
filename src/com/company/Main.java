@@ -14,6 +14,7 @@ public class Main {
 			field.result(harcos, varazslo);
 	    	field.Move();
 			Thread.sleep(1000);
+
 		}
     }
 }

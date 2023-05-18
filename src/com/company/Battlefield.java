@@ -30,7 +30,7 @@ public class Battlefield {
             else if (i == player2.getPosition()) battlefield.append("V");
             else battlefield.append("_");
         }
-        battlefield.append("-->\tHarcos élete:"+player1.getHealth()+"\tVarázsló élete:"+player2.getHealth());
+        battlefield.append("-->\t"+player1.getName()+" élete:"+player1.getHealth()+"\t"+player2.getName()+" élete:"+player2.getHealth());
         return  battlefield.toString();
     }
     public void result(Player player1, Player player2){

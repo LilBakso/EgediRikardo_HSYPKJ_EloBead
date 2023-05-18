@@ -28,6 +28,10 @@ public class Player {
         return health;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int getPosition(){
         return position;
     }

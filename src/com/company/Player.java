@@ -1,14 +1,17 @@
 package com.company;
 
 public class Player {
+    private Dice d6;
     private int health;
     private int position;
     private String name;
 
     public Player(String name){
         this.name = name;
-        this.health = (int)(Math.random()*7)+3;
+        this.d6 = new Dice(6);
+        this.health = d6.Throw()+3;
         this.position = (int)(Math.random()*3);
+
     }
 
     public void Move(){
@@ -20,7 +23,7 @@ public class Player {
     }
 
     public void Damage(Player enemy) {
-        int damage = (int)(Math.random()*7);
+        int damage = d6.Throw();
         this.health -= damage;
     }
 

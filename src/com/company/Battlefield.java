@@ -16,6 +16,7 @@ public class Battlefield {
 
     public void Fight(){
         if (player1.isFighting(player2)){
+            System.out.println("Harc!");
             player1.Damage(player2);
             player2.Damage(player1);
         }
@@ -31,5 +32,12 @@ public class Battlefield {
         }
         battlefield.append("-->\tHarcos élete:"+player1.getHealth()+"\tVarázsló élete:"+player2.getHealth());
         return  battlefield.toString();
+    }
+    public void result(Player player1, Player player2){
+        if(player1.getHealth()<=0 && player2.getHealth() <= 0) System.out.println("Mindkét karakter meghalt!");
+        else if (player1.getHealth() > 0 && player2.getHealth() < 0) System.out.println("Harcos nyert!");
+        else if (player1.getHealth() < 0 && player2.getHealth() > 0) System.out.println("Varázsló nyert!");
+        else System.out.println("A harc folytatódik\n");
+
     }
 }

@@ -1,38 +1,42 @@
 package com.company;
 
 public class Battlefield {
-    private Player player1;
+    private Fighter fighter;
     private Player player2;
 
-    public Battlefield(Player player1, Player player2){
-        this.player1 = player1;
+    public Battlefield(Fighter fighter, Player player2){
+        this.fighter = fighter;
         this.player2 = player2;
     }
 
     public void Move(){
-        player1.Move();
+        fighter.Move();
         player2.Move();
     }
 
     public void Fight(){
-        if (player1.isFighting(player2)){
+        if (fighter.isFighting(player2)){
             System.out.println("Harc!");
-            player1.Damage(player2);
-            player2.Damage(player1);
+            if (!fighter.isBlocking()){
+                player2.Damage(fighter);
+            }
+            fighter.Damage(player2);
         }
     }
+
     public static String buildField(int fieldsize,Player player1, Player player2){
         StringBuilder battlefield = new StringBuilder();
 
         for (int i = 0; i < fieldsize; i++){
             if(i == player1.getPosition() && i == player2.getPosition()) battlefield.append("X");
-            else if (i == player1.getPosition()) battlefield.append("H");
-            else if (i == player2.getPosition()) battlefield.append("V");
+            else if (i == player1.getPosition()) battlefield.append("F");
+            else if (i == player2.getPosition()) battlefield.append("W");
             else battlefield.append("_");
         }
         battlefield.append("-->\t"+player1.getName()+" élete:"+player1.getHealth()+"\t"+player2.getName()+" élete:"+player2.getHealth());
         return  battlefield.toString();
     }
+
     public void result(Player player1, Player player2){
         if(player1.getHealth()<=0 && player2.getHealth() <= 0) System.out.println("Mindkét karakter meghalt!");
         else if (player1.getHealth() > 0 && player2.getHealth() < 0) System.out.println("Harcos nyert!");

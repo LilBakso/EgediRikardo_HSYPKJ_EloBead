@@ -24,6 +24,9 @@ public class Player {
         this.health -= damage;
     }
 
+    public int getHealth() {
+        return health;
+    }
 
     public int getPosition(){
         return position;

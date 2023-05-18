@@ -11,7 +11,6 @@ public class Player {
         this.d6 = new Dice(6);
         this.health = d6.Throw()+3;
         this.position = (int)(Math.random()*3);
-
     }
 
     public void Move(){
@@ -24,7 +23,7 @@ public class Player {
 
     public void Damage(Player enemy) {
         int damage = d6.Throw();
-        this.health -= damage;
+        enemy.setHealth(enemy.getHealth()-damage);
     }
 
     public int getHealth() {
@@ -33,6 +32,10 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     public int getPosition(){

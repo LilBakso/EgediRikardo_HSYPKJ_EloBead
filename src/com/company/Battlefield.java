@@ -20,4 +20,16 @@ public class Battlefield {
             player2.Damage(player1);
         }
     }
+    public static String buildField(int fieldsize,Player player1, Player player2){
+        StringBuilder battlefield = new StringBuilder();
+
+        for (int i = 0; i < fieldsize; i++){
+            if(i == player1.getPosition() && i == player2.getPosition()) battlefield.append("X");
+            else if (i == player1.getPosition()) battlefield.append("H");
+            else if (i == player2.getPosition()) battlefield.append("V");
+            else battlefield.append("_");
+        }
+        battlefield.append("-->\tHarcos élete:"+player1.getHealth()+"\tVarázsló élete:"+player2.getHealth());
+        return  battlefield.toString();
+    }
 }

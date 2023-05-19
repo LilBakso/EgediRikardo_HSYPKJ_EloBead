@@ -18,8 +18,10 @@ public class Battlefield {
         if (fighter.compareTo(wizard) == 0){
             System.out.println("Harc!");
             if (!fighter.isBlocking()){
+                System.out.println("Harcos nem tudta blockolni az ütést!");
                 wizard.Damage(fighter);
             }
+            else System.out.println("Harcos blokkolta az ütést!");
             fighter.Damage(wizard);
         }
         else{

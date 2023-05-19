@@ -2,6 +2,7 @@ package com.company;
 
 public class Main {
 	/*
+	* GitHub link: https://github.com/LilBakso/EgediRikardo_HSYPKJ_EloBead.git
 	* Alapfeladat: Harcos és Varázsló egy három mezős pályán, ha ugyanoda lépnek csatáznak.
 	* Kiegészítés:
 	* 	Öröklődés:

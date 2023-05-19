@@ -44,6 +44,7 @@ public class Player implements Comparable<Player>{
     @Override
     public int compareTo(Player player) {
         return this.getPosition() - player.getPosition();
+
     }
 }
 

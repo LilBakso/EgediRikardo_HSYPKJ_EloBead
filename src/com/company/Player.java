@@ -1,7 +1,7 @@
 package com.company;
 
-public class Player {
-    protected Dice d6;
+public class Player implements Comparable<Player>{
+    protected Dice dice;
     protected int health;
     protected int position;
     protected String name;
@@ -11,8 +11,8 @@ public class Player {
     }
     public Player(String name, Dice dice, int position){
         this.name = name;
-        this.d6 = dice;
-        this.health = d6.Throw()+3;
+        this.dice = dice;
+        this.health = dice.Throw()+3;
         this.position = position;
     }
 
@@ -20,12 +20,8 @@ public class Player {
         this.position = (int)(Math.random()*3);
     }
 
-    public boolean isFighting(Player enemy){
-        return this.position == enemy.position;
-    }
-
     public void Damage(Player enemy) {
-        int damage = d6.Throw();
+        int damage = dice.Throw();
         enemy.setHealth(enemy.getHealth()-damage);
     }
 
@@ -43,6 +39,11 @@ public class Player {
 
     public int getPosition(){
         return position;
+    }
+
+    @Override
+    public int compareTo(Player player) {
+        return this.getPosition() - player.getPosition();
     }
 }
 

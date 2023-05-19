@@ -9,13 +9,6 @@ public class Fighter extends Player {
 
     public boolean isBlocking(){
         int block = dice.Throw();
-            if (block > 3) {
-                System.out.println("Harcos blokkolta az ütést");
-                return true;
-            }
-            else{
-                System.out.println("Harcos nem blokkolta az ütést");
-                return false;
-            }
+        return block > 3;
     }
 }

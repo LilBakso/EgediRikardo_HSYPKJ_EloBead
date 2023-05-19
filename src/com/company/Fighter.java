@@ -1,28 +1,26 @@
 package com.company;
 
-//Warrior hp kétszeres + block esély
-
 public class Fighter extends Player {
-    private int health;
-    private Dice dice;
-    private int block;
 
     public Fighter(String name) {
-        super(name);
-        this.dice = new Dice(6);
-        this.health = 2*dice.Throw();
+        super(name, new Dice(6), (int)(Math.random()*3));
+        this.setHealth(d6.Throw()+ d6.Throw());
     }
 
     public boolean isBlocking(){
-        int block = dice.Throw();
-            if (block > 3) {
+        int block = d6.Throw();
+            if (block > 5) {
                 System.out.println("Harcos blokkolta az ütést!");
                 return true;
             }
             else{
                 System.out.println("Harcos nem tudta blokkolni az ütést");
+                return false;
             }
-        return false;
     }
 
+    @Override
+    public int getHealth() {
+        return health;
+    }
 }

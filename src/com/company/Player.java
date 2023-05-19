@@ -1,16 +1,19 @@
 package com.company;
 
 public class Player {
-    private Dice d6;
-    private int health;
-    private int position;
-    private String name;
+    protected Dice d6;
+    protected int health;
+    protected int position;
+    protected String name;
 
     public Player(String name){
+        this(name, new Dice(6), (int)(Math.random()*3));
+    }
+    public Player(String name, Dice dice, int position){
         this.name = name;
-        this.d6 = new Dice(6);
+        this.d6 = dice;
         this.health = d6.Throw()+3;
-        this.position = (int)(Math.random()*3);
+        this.position = position;
     }
 
     public void Move(){

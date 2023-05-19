@@ -15,7 +15,7 @@ public class Battlefield {
     }
 
     public void Fight(){
-        if (fighter.isFighting(wizard)){
+        if (fighter.compareTo(wizard) == 0){
             System.out.println("Harc!");
             if (!fighter.isBlocking()){
                 wizard.Damage(fighter);
